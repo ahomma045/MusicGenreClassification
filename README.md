@@ -3,6 +3,7 @@
 ---
 
 ## Project Team 
+
 Christopher Landschoot, Elio Marcaccio, Farhad Farahani, Ayako Homma
 
 --- 
@@ -49,9 +50,9 @@ Below is 5 samples of the collected data used in the classification models.
 
 ![spotify-data](/images/spotify-data.png)
 
-The data collection process is detailed in the notebook and involves making successive calls to extract track URIs from the playlist. These URIs are then used to extract artist URIs where genres are held. The song features are then extracted using .get_audio_features() and cast into a dataframe. Collecting the data using the Spotipy API is time-consuming and takes several days to complete. Fortunately, Cameron Watts and his team already collected data for a similar task and wrote an article called "Extracting Song Data From the Spotify API Using Python," which we used.
+The data collection process is detailed in the notebook and involves making successive calls to extract track URIs from the playlist. These URIs are then used to extract artist URIs where genres are held. The song features are then extracted using .get_audio_features() and cast into a dataframe. Collecting the data using the Spotipy API is time-consuming and takes several days to complete. Fortunately, Cameron Watts and his team already collected data for a similar task and wrote an article called "[Extracting Song Data From the Spotify API Using Python](https://towardsdatascience.com/extracting-song-data-from-the-spotify-api-using-python-b1e79388d50)," which we used.
 
-#### **Modeling**
+#### **Model Building**
 In order to analyze and predict user behavior on Spotify, two types of models were tested: Logistic Regression and Dense Neural Network (DNN). These models were created as base cases for the Spotify data. 
 
 (a) Logistic Regression
@@ -127,7 +128,7 @@ Data collection and preprocessing consists of three steps:
 
 During this process, the audio files are split into 3-second segments. Because neural networks needs a large number of samples to train on, this effectively increases the number of samples we will be able to feed into our network. Once all steps previously illustrated were complete, the data was ready to train the models.
 
-#### **Modeling**
+#### **Model Building**
 - Two types of models were tested
     - Dense Neural Netowrk (DNN)
     - Convolutional Neural Network (CNN)
@@ -206,6 +207,7 @@ Overall, the final CNN model has proven the ability to learn complex patterns in
 ---
 
 ## Conclusion
+
 Through these technical notebook reports, audio data was collected, processed, and used to train multiple classification models. Additionally, engineered audio feature data was scraped from Spotify to use in another classification model. These two separate methods were performed to demonstrate the different ways songs can be classified into genres of music.
 - Utilizing pre-engineered features provided by Spotify, such as Liveness, Acousticness, Tempo, etc. to train a logistic regression and dense neural network model.
 - Processing raw audio files to train a dense neural network and multiple convolutional neural networks.
